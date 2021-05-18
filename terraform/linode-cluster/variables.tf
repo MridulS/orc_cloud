@@ -41,3 +41,8 @@ variable "volume_size" {
   description = "Volume size in GB for each instance (required)"
   default = "100"
 }
+
+variable "volume_count" {
+  description = "Number of volumes to create and attach in the cluster."
+  default = "3"
+}
