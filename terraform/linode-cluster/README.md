@@ -19,5 +19,5 @@ a limbo. (poetically described at https://github.com/hashicorp/terraform/issues/
 
 ```
 $ terraform state rm local_file.kubeconfig # remove the local file from state
-$ terraform destory
+$ terraform destroy
 ```
