@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pbhub-controller
+  namespace: pbhub-ns
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: nb-192-46-238-56.frankfurt.nodebalancer.linode.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: proxy-public
+            port:
+              number: 80
+      # - pathType: ImplementationSpecific
+      #   path: "/binder"
+      #   backend:
+      #     service:
+      #       name: binder
+      #       port:
+      #         number: 80
+      # - pathType: ImplementationSpecific
+      #   path: "/hub"
+      #   backend:
+      #     service:
+      #       name: hub
+      #       port:
+      #         number: 8081
+      # - pathType: ImplementationSpecific
+      #   path: "/proxy-api"
+      #   backend:
+      #     service:
+      #       name: proxy-api
+      #       port:
+      #         number: 8001
